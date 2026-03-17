@@ -13,7 +13,7 @@ This is my repo for STATS 220.
 ### Vegetables I like:
 
 - Carrots
-- Brocolli
+- Broccoli
 - Capsicum
 - Cucumber
 - Lettuce
@@ -23,11 +23,11 @@ This is my repo for STATS 220.
 
 ### Vegetables I dislike:
 
-- Brussel sprouts
+- Brussels sprouts
 - Okra
-- Brussel sprouts
+- Brussels sprouts
 - Mushy peas
-- **Brussel sprouts**
+- **Brussels sprouts**
 
 ### Me. Pretty much always.
 ![](https://media.tenor.com/DgzBbRG6ibUAAAAM/gross-eek.gif)
