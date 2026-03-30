@@ -146,8 +146,9 @@ most_played_hero <- max(number_of_damage, number_of_support, number_of_tank)
 
 ### Some Summary Statistics
 - There were `r number_of_matches` total matches recorded
+- The most common match outcome was `r most_common_match_outcome`
 - Damage was played `r number_of_damage` times, Tank selected `r number_of_tank` times, and Support chosen `r number_of_support` times
-- The most played hero was played `r most_played_hero` times
+- The most played hero was `r most_played_hero_name`
 - The mean number of eliminations per match was `r mean_eliminations`
 - The total number of eliminations was `r total_eliminations`
 - Across all matches, the maximum number of deaths was `r max_deaths`
