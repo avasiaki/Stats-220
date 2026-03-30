@@ -5,23 +5,150 @@ output: html_fragment
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
-
+library(tidyverse)
 ```
 
 ```{css}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+body {
+  text-align: justify;
+  font-family: "Exo 2", sans-serif;
+  background-color: #b1b7c1;
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+  color: #43484c;
+  margin-left: 0px
+}
+
+h3 {
+  font-family: "Exo 2", sans-serif;
+    font-size: 40px;
+  padding-top: 40px;
+  color: #43484c;
+}
+
+p {
+  font-family: "Exo 2", sans-serif;
+  font-size: large;
+  line-height: 1.5;
+  color: #ffffff
+}
+
+li {
+  font-family: "Exo 2", sans-serif;
+  font-size: large;
+  line-height: 1.5;
+  color: #ffffff
+}
+```
+
+![](overwatch_logo.png)
+
+## Match Performance Analysis
+
+### Understanding the Data
+Overwatch is a popular first-person shooter game where players use their hero abilities to work as a team, defeat the opposition, and complete an objective. Using a survey, numeric and categorical data was gathered to track my performance in Overwatch. I recorded the match duration, hero type, match outcome, game mode, eliminations, and deaths. 
+
+
+Overwatch Game Modes
+
+![](gamemode_image.png)
+
+
+
+Overwatch Hero Types
+
+![](https://interfaceingame.com/wp-content/uploads/overwatch-2/overwatch-2-hero-gallery-500x281.png)
+
+
+### A Visual Breakdown
+
+```{r fig.width = 8, fig.height = 4}
+latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vS_rF0OiJd8elgr13B-BHTL_zzWyY0KCt0iHhhQcDdh5ImKJ-y9Zjx9wqHxLbHlAon4AikTjzq3JfZg/pub?output=csv") %>%
+  rename(timestamp = 1,
+         match_duration_sec = 2,
+         match_outcome = 3,
+         hero_type = 4,
+         game_mode = 5,
+         eliminations = 6,
+         deaths = 7)
+
+ggplot(data = latest_data) +
+  geom_bar(aes(x = match_outcome, fill = hero_type)) +
+  labs(title = "Match Outcome compared to Hero Type",
+       x = "Match Outcome",
+       y = "Number of Matches",
+       caption = "Source: Overwatch Match Performance Data")
 
 ```
 
-## What's going on with this data?
 
-You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
+
+```{r fig.width = 8, fig.height = 4}
+
+ggplot(data = latest_data) +
+  geom_bar(aes(x = game_mode),
+           fill = "#1A9CFF") +
+  labs(title = "Matches by Game Mode",
+       x = "Game Mode",
+       y = "Number of Matches",
+       caption = "Source: Overwatch Match Performance Data")
+
+```
+
+
+
+```{r fig.width = 8, fig.height = 4}
+
+ggplot(data = latest_data) +
+  geom_bar(aes(x = hero_type),
+           fill = "#F77768") +
+  labs(title = "Matches by Hero Type",
+       x = "Hero Type",
+       y = "Number of Matches",
+       caption = "Source: Overwatch Match Performance Data")
+
+
+```
+
 
 ```{r}
-pets <- c("cat", "dog", "turtle", "rabbit")
-best_pet <- pets[1]
+
+number_of_matches <- nrow(latest_data)
+
+mean_eliminations <- latest_data$eliminations %>%
+  mean() %>%
+  round()
+
+max_deaths <- max(latest_data$deaths)
+
+total_eliminations <- sum(latest_data$eliminations)
+
+## I am currently taking COMPSCI 101 and learning Python, so I am familiar with using ==. == is used to compare two objects, checking whether they are equal. 
+
+number_of_damage <- sum(latest_data$hero_type == "Damage")
+number_of_tank <- sum(latest_data$hero_type == "Tank")
+number_of_support <- sum(latest_data$hero_type == "Support")
+
+most_played_hero <- max(number_of_damage, number_of_support, number_of_tank)
 
 ```
 
-The best pet to have is a `r best_pet` of course!
+### Some Summary Statistics
+- There were `r number_of_matches` total matches recorded
+- Damage was played `r number_of_damage` times, Tank selected `r number_of_tank` times, and Support chosen `r number_of_support` times
+- The most played hero was played `r most_played_hero` times
+- The mean number of eliminations per match was `r mean_eliminations`
+- The total number of eliminations was `r total_eliminations`
+- Across all matches, the maximum number of deaths was `r max_deaths`
 
-![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
