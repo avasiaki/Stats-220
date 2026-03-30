@@ -52,7 +52,7 @@ li {
 }
 ```
 
-![](overwatch_logo.png)
+![](https://avasiaki.github.io/stats220/overwatch_logo.png)
 
 ## Match Performance Analysis
 
@@ -62,7 +62,7 @@ Overwatch is a popular first-person shooter game where players use their hero ab
 
 Overwatch Game Modes
 
-![](gamemode_image.png)
+![](https://avasiaki.github.io/stats220/gamemode_image.png)
 
 
 
