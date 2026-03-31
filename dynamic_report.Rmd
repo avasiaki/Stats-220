@@ -46,7 +46,7 @@ p {
 
 li {
   font-family: "Exo 2", sans-serif;
-  font-size: large;
+  font-size: 30px;
   line-height: 1.5;
   color: #ffffff
 }
@@ -149,4 +149,3 @@ most_common_match_outcome <- max(latest_data$match_outcome)
 -   The most played hero type was `r most_played_hero_name`
 -   On average, there were `r mean_eliminations` eliminations per match, with a total of `r total_eliminations` eliminations recorded
 -   Across all matches, the maximum number of deaths was `r max_deaths`
-
