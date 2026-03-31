@@ -142,6 +142,8 @@ number_of_support <- sum(latest_data$hero_type == "Support")
 
 most_played_hero <- max(number_of_damage, number_of_support, number_of_tank)
 
+most_common_match_outcome <- max(latest_data$match_outcome)
+
 ```
 
 ### Some Summary Statistics
