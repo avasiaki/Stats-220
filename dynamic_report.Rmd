@@ -57,19 +57,16 @@ li {
 ## Match Performance Analysis
 
 ### Understanding the Data
-Overwatch is a popular first-person shooter game where players use their hero abilities to work as a team, defeat the opposition, and complete an objective. Using a survey, numeric and categorical data was gathered to track my performance in Overwatch. I recorded the match duration, hero type, match outcome, game mode, eliminations, and deaths. 
 
+Overwatch is a popular first-person shooter game where players use their hero abilities to work as a team, defeat the opposition, and complete an objective. Using a survey, numeric and categorical data was gathered to track my performance in Overwatch. I recorded the match duration, hero type, match outcome, game mode, eliminations, and deaths.
 
 Overwatch Game Modes
 
 ![](https://avasiaki.github.io/stats220/gamemode_image.png)
 
-
-
 Overwatch Hero Types
 
 ![](https://interfaceingame.com/wp-content/uploads/overwatch-2/overwatch-2-hero-gallery-500x281.png)
-
 
 ### A Visual Breakdown
 
@@ -85,20 +82,19 @@ latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vS_rF0O
 
 ggplot(data = latest_data) +
   geom_bar(aes(x = match_outcome, fill = hero_type)) +
-  labs(title = "Match Outcome compared to Hero Type",
+  scale_fill_manual(values = c("#f99e1a", "#405275", "#218ffe")) + 
+  labs(title = "Match Outcome compared to Hero Type", 
        x = "Match Outcome",
        y = "Number of Matches",
        caption = "Source: Overwatch Match Performance Data")
 
 ```
 
-
-
 ```{r fig.width = 8, fig.height = 4}
 
 ggplot(data = latest_data) +
   geom_bar(aes(x = game_mode),
-           fill = "#1A9CFF") +
+           fill = "#405275") +
   labs(title = "Matches by Game Mode",
        x = "Game Mode",
        y = "Number of Matches",
@@ -106,21 +102,18 @@ ggplot(data = latest_data) +
 
 ```
 
-
-
 ```{r fig.width = 8, fig.height = 4}
 
 ggplot(data = latest_data) +
   geom_bar(aes(x = hero_type),
-           fill = "#F77768") +
+           fill = "#f99e1a") +
   labs(title = "Matches by Hero Type",
-       x = "Hero Type",
+       x = "Game Mode",
        y = "Number of Matches",
        caption = "Source: Overwatch Match Performance Data")
 
 
 ```
-
 
 ```{r}
 
@@ -149,11 +142,11 @@ most_common_match_outcome <- max(latest_data$match_outcome)
 ```
 
 ### Some Summary Statistics
-- A total of `r number_of_matches` matches were recorded
-- The most common match outcome was `r most_common_match_outcome`
-- Damage was played `r number_of_damage` times, Tank played `r number_of_tank` times, and Support played `r number_of_support` times
-- The most played hero type was `r most_played_hero_name`
-- On average, there were `r mean_eliminations` eliminations per match, with a total of `r total_eliminations` eliminations recorded
-- Across all matches, the maximum number of deaths was `r max_deaths`
 
+-   A total of `r number_of_matches` matches were recorded
+-   The most common match outcome was `r most_common_match_outcome`
+-   Damage was played `r number_of_damage` times, Tank played `r number_of_tank` times, and Support played `r number_of_support` times
+-   The most played hero type was `r most_played_hero_name`
+-   On average, there were `r mean_eliminations` eliminations per match, with a total of `r total_eliminations` eliminations recorded
+-   Across all matches, the maximum number of deaths was `r max_deaths`
 
