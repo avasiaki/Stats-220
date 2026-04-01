@@ -181,7 +181,7 @@ To provide further insight into my Overwatch perfomance, several key summary val
 -   The most played hero type was `r most_played_hero_name`
 -   On average, there were `r mean_eliminations` eliminations per match, with a total of `r total_eliminations` eliminations recorded
 -   Across all matches, the maximum number of deaths was `r max_deaths`
-- The average match duration was `r mean_match_duration` seconds
+- The average match duration was about `r mean_match_duration` seconds
 
 
 ![](https://media.tenor.com/-Br_KpmvEHEAAAAM/overwatch.gif)
