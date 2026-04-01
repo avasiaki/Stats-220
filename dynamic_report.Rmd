@@ -5,7 +5,7 @@ output: html_fragment
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
-library(tidyverse)
+
 ```
 
 ```{css}
@@ -92,6 +92,9 @@ Overwatch Hero Types
 This graph compares match outcomes across different hero types, showing how often each role is associated with each result.
 
 ```{r fig.width = 8, fig.height = 4}
+
+library(tidyverse)
+
 latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vS_rF0OiJd8elgr13B-BHTL_zzWyY0KCt0iHhhQcDdh5ImKJ-y9Zjx9wqHxLbHlAon4AikTjzq3JfZg/pub?output=csv") %>%
   rename(timestamp = 1,
          match_duration_sec = 2,
@@ -162,6 +165,10 @@ most_played_hero_name <- max(latest_data$hero_type)
 
 most_common_match_outcome <- max(latest_data$match_outcome)
 
+mean_match_duration <- latest_data$match_duration_sec %>%
+  mean() %>%
+  round()
+
 ```
 
 ### Some Summary Stats
@@ -174,6 +181,7 @@ To provide further insight into my Overwatch perfomance, several key summary val
 -   The most played hero type was `r most_played_hero_name`
 -   On average, there were `r mean_eliminations` eliminations per match, with a total of `r total_eliminations` eliminations recorded
 -   Across all matches, the maximum number of deaths was `r max_deaths`
+- The average match duration was `r mean_match_duration` seconds
 
 
 ![](https://media.tenor.com/-Br_KpmvEHEAAAAM/overwatch.gif)
