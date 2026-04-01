@@ -89,7 +89,7 @@ Overwatch Hero Types
 
 ### A Visual Breakdown
 
-The following graph compares match outcomes across different hero types, showing how often each role is associated with each result.
+This graph compares match outcomes across different hero types, showing how often each role is associated with each result.
 
 ```{r fig.width = 8, fig.height = 4}
 latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vS_rF0OiJd8elgr13B-BHTL_zzWyY0KCt0iHhhQcDdh5ImKJ-y9Zjx9wqHxLbHlAon4AikTjzq3JfZg/pub?output=csv") %>%
