@@ -27,9 +27,7 @@ h2 {
     font-weight: bold;
     font-size: 60px;
   color: #43484c;
-  margin-left: 0px
-  text-decoration: underline;
-  text-decoration-style: dashed;
+  margin-left: 0px;
 }
 
 h3 {
@@ -37,6 +35,9 @@ h3 {
     font-size: 40px;
   padding-top: 40px;
   color: #43484c;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: #218ffe;
 }
 
 p {
