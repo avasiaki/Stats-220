@@ -147,7 +147,7 @@ number_of_matches <- nrow(latest_data)
 
 mean_eliminations <- latest_data$eliminations %>%
   mean() %>%
-  round()
+  round(1)
 
 max_deaths <- max(latest_data$deaths)
 
@@ -182,6 +182,9 @@ To provide further insight into my Overwatch perfomance, several key summary val
 -   On average, there were `r mean_eliminations` eliminations per match, with a total of `r total_eliminations` eliminations recorded
 -   Across all matches, the maximum number of deaths was `r max_deaths`
 - The average match duration was about `r mean_match_duration` seconds
+
+
+![](https://media.tenor.com/-Br_KpmvEHEAAAAM/overwatch.gif)
 
 
 ![](https://media.tenor.com/-Br_KpmvEHEAAAAM/overwatch.gif)
