@@ -64,6 +64,7 @@ li {
 Overwatch is a popular first-person shooter game where players work together to defeat the opposing team and complete an objective. 
 
 For this report, I spent a week collecting data on my own Overwatch games, recording variables such as:
+
 - Match outcome (Win, Loss, or Draw)
 - Match duration (in seconds)
 - Eliminations (players I killed during the match)
