@@ -161,10 +161,6 @@ number_of_support <- sum(latest_data$hero_type == "Support")
 
 most_played_hero <- max(number_of_damage, number_of_support, number_of_tank)
 
-most_played_hero_name <- max(latest_data$hero_type)
-
-most_common_match_outcome <- max(latest_data$match_outcome)
-
 mean_match_duration <- latest_data$match_duration_sec %>%
   mean() %>%
   round()
@@ -176,15 +172,11 @@ mean_match_duration <- latest_data$match_duration_sec %>%
 To provide further insight into my Overwatch perfomance, several key summary values can be analysed:
 
 -   A total of `r number_of_matches` matches were recorded
--   The most common match outcome was `r most_common_match_outcome`
 -   Damage was played `r number_of_damage` times, Tank played `r number_of_tank` times, and Support played `r number_of_support` times
--   The most played hero type was `r most_played_hero_name`
+- The most played hero type was played `r most_played_hero` times
 -   On average, there were `r mean_eliminations` eliminations per match, with a total of `r total_eliminations` eliminations recorded
 -   Across all matches, the maximum number of deaths was `r max_deaths`
 - The average match duration was about `r mean_match_duration` seconds
-
-
-![](https://media.tenor.com/-Br_KpmvEHEAAAAM/overwatch.gif)
 
 
 ![](https://media.tenor.com/-Br_KpmvEHEAAAAM/overwatch.gif)
